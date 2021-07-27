@@ -1,4 +1,4 @@
-# Program to add two matrices
+# Program to multiplication two matrices
 import sys
 
 from addition_of_two_matrices import first_matrix_colums
@@ -60,7 +60,7 @@ try:
 
     if first_matrix_colums != second_matrix_rows:
         print(
-            '''Sorry! multiplication of two matrices is 
+            '''Sorry! multiplication of two matrices is not 
             possible enter correct input ''')
         sys.exit()
 
