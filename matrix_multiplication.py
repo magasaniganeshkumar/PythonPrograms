@@ -1,8 +1,6 @@
 # Program to multiplication two matrices
 import sys
 
-from addition_of_two_matrices import first_matrix_colums
-
 
 class MatricesMultiplication:
 
@@ -61,7 +59,7 @@ try:
     if first_matrix_colums != second_matrix_rows:
         print(
             '''Sorry! multiplication of two matrices is not 
-            possible enter correct input ''')
+            possible please enter correct input ''')
         sys.exit()
 
 except ValueError:
@@ -75,8 +73,6 @@ else:
     print("Second Matrix is: ")
     for element in second_matrix:
         print(element)
-
-
 
 reference = MatricesMultiplication(first_matrix, second_matrix)
 reference.multiplication_of_two_matrice()
