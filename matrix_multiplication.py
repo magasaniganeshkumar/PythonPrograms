@@ -1,5 +1,12 @@
 # Program to multiplication two matrices
 import sys
+import logging
+
+log_format = "%(levelname)s %(asctime)s - %(message)s"
+logging.basicConfig(filename="multiplication_of_two_matrices.log",
+                    level=logging.INFO,
+                    format=log_format,
+                    datefmt="%d/%m/%y %I:%M:%S:%p")
 
 
 class MatricesMultiplication:
@@ -28,17 +35,20 @@ class MatricesMultiplication:
             result_matrix.append(responce)
         responce = []
         print("Multiplication of two Matrix is: ")
+        logging.info("Request processing completed !")
         print(*result_matrix, sep='\n')
 
 
+logging.info("A new request came !")
 try:
     first_matrix_rows = int(
         input("Enter the Number of rows you need in First Matrix : "))
     first_matrix_colums = int(
         input("Enter the Number of Columns you need in First Matrix : "))
 
-except ValueError:
+except Exception as massage:
     print("Please enter correct rows and colums 'It Must Be Number' onlys")
+    logging.exception(massage)
     sys.exit()
 
 else:
@@ -58,12 +68,14 @@ try:
 
     if first_matrix_colums != second_matrix_rows:
         print(
-            '''Sorry! multiplication of two matrices is not 
+             '''Sorry! multiplication of two matrices is not 
             possible please enter correct input ''')
+        logging.warning("addition of two matrices is not possible !..")
         sys.exit()
 
-except ValueError:
+except Exception as massage:
     print("Please enter correct rows and colums 'It Must Be Number' onlys")
+    logging.exception(massage)
     sys.exit()
 
 else:
