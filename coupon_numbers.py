@@ -1,4 +1,3 @@
-# Program to measuring the time that elapases between start and end clicks
 import logging
 from random import *
 
